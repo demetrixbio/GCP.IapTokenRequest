@@ -10,7 +10,7 @@ open Google.Apis.Auth.OAuth2.Requests
 type ServiceAccountCredential with
     member this.GetIapAccessTokenAsync(oAuthClientId: string, ?expires: DateTime) =
         async {
-            let now = DateTimeOffset.Now;
+            let now = DateTimeOffset.Now
 
             let key = RsaSecurityKey(this.Key.ExportParameters(true))
             let creds = SigningCredentials(key, SecurityAlgorithms.RsaSha256)
